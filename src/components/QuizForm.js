@@ -124,7 +124,7 @@ function QuizForm({ myquiz, setmyquiz, showForm, setshowForm }) {
             const token = localStorage.getItem('authToken');
             if (showForm == 1) {
                 setshowSpinner(true);
-                const resp = await fetch('http://localhost:5000/quiz/newquiz', {
+                const resp = await fetch(`${process.env.REACT_APP_BACKEND}/quiz/newquiz`, {
                     method: "post",
                     mode: "cors",
                     headers: {
@@ -150,7 +150,7 @@ function QuizForm({ myquiz, setmyquiz, showForm, setshowForm }) {
             }
             else {
                 setshowSpinner(true);
-                const resp = await fetch(`http://localhost:5000/quiz/updatequiz/${myquiz[showForm[1]]._id}`, {
+                const resp = await fetch(`${process.env.REACT_APP_BACKEND}/quiz/updatequiz/${myquiz[showForm[1]]._id}`, {
                     method: "post",
                     mode: "cors",
                     headers: {

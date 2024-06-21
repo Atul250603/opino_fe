@@ -13,7 +13,7 @@ function MyQuizzes({ myquiz, setmyquiz, showForm, setshowForm }) {
                         navigate('/login');
                         return;
                     }
-                    const resp = await fetch('http://localhost:5000/quiz/myquizzes', {
+                    const resp = await fetch(`${process.env.REACT_APP_BACKEND}/quiz/myquizzes`, {
                         method: "post",
                         mode: "cors",
                         headers: {

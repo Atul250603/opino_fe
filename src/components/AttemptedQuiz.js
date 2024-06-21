@@ -18,7 +18,7 @@ function AttemptedQuiz() {
                     navigate('/login');
                     return;
                 }
-                const resp = await fetch('http://localhost:5000/quiz/attempted', {
+                const resp = await fetch(`${process.env.REACT_APP_BACKEND}/quiz/attempted`, {
                     method: "post",
                     mode: "cors",
                     headers: {
@@ -55,7 +55,7 @@ function AttemptedQuiz() {
         <div className="h-full w-full p-2">
             <div>
                 {
-                    (quiz) ? <div>
+                    (quiz && quiz.length>0) ? <div>
                         {
                             quiz.map((element, idx) => <div className="flex gap-2 my-3 justify-between bg-black p-3" style={{ boxShadow: "3px 3px 0px 1px grey" }}>
                                 <div className="flex items-center gap-4 text-white">

@@ -28,7 +28,7 @@ function Signup() {
                 throw "Password Doesn't Match";
             }
             setshowSpinner(true);
-            const resp = await fetch("http://localhost:5000/auth/signup", {
+            const resp = await fetch(`${process.env.REACT_APP_BACKEND}/auth/signup`, {
                 method: "post",
                 mode: "cors",
                 headers: {

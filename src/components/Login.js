@@ -21,7 +21,7 @@ function Login() {
                 throw "Password Must Be Atleast 8 Characters Long";
             }
             setshowSpinner(true);
-            const resp = await fetch('http://localhost:5000/auth/login', {
+            const resp = await fetch(`${process.env.REACT_APP_BACKEND}/auth/login`, {
                 method: "post",
                 mode: "cors",
                 headers: {

@@ -25,7 +25,7 @@ function LiveQuiz() {
                     navigate('/login');
                     return;
                 }
-                const resp = await fetch('http://localhost:5000/quiz/livequiz', {
+                const resp = await fetch(`${process.env.REACT_APP_BACKEND}/quiz/livequiz`, {
                     method: "post",
                     mode: "cors",
                     headers: {
@@ -116,7 +116,7 @@ function LiveQuiz() {
                 solution: sols,
                 marks: marks
             }
-            const resp = await fetch(`http://localhost:5000/submissions/submit/${quiz[idx]._id}`, {
+            const resp = await fetch(`${process.env.REACT_APP_BACKEND}/submissions/submit/${quiz[idx]._id}`, {
                 method: "post",
                 mode: "cors",
                 headers: {
